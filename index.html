@@ -77,8 +77,8 @@
   .brand{display:flex;align-items:baseline;gap:.55rem;font-family:'Jost',sans-serif;font-size:1.6rem;font-weight:400;color:var(--sage-deep);letter-spacing:.08em}
   .brand b{font-weight:500;text-transform:lowercase}
   .brand span{font-family:'Azeret Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);font-weight:500}
-  .navlinks{display:flex;gap:26px;align-items:center}
-  .navlinks a{font-size:.92rem;color:var(--ink-soft);font-weight:500;transition:color .2s}
+  .navlinks{display:flex;gap:24px;align-items:center}
+  .navlinks a{font-size:.9rem;color:var(--ink-soft);font-weight:500;transition:color .2s;white-space:nowrap}
   .navlinks a:hover{color:var(--sage-deep)}
   .navlinks a.btn{color:var(--cream)}
   .navlinks a.btn:hover{color:var(--cream)}
@@ -87,7 +87,7 @@
   .foot-mark{width:104px;height:104px;color:var(--terra-soft);display:block;margin:0 0 6px}
   .foot-name{font-family:'Jost',sans-serif;font-size:2.5rem;font-weight:400;line-height:.9;letter-spacing:.09em;color:var(--cream)}
   .foot-sub{font-family:'Azeret Mono',monospace;font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;color:var(--terra-soft)}
-  .btn{
+  .btn{white-space:nowrap;
     display:inline-flex;align-items:center;gap:.5rem;
     background:var(--sage-deep);color:var(--cream);
     padding:13px 26px;border-radius:100px;font-weight:600;font-size:.92rem;
@@ -346,6 +346,15 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
+    .navlinks{
+      position:fixed;inset:0 0 auto 0;top:64px;flex-direction:column;gap:0;
+      background:var(--cream);padding:8px 0;box-shadow:var(--shadow);
+      transform:translateY(-130%);transition:transform .35s;align-items:stretch;
+    }
+    .navlinks.open{transform:none}
+    .navlinks a{padding:14px 28px;border-bottom:1px solid rgba(63,79,66,.06)}
+    .navlinks .btn{margin:12px 28px;justify-content:center}
+    .menu-toggle{display:flex}
     .hero-grid,.sobre-grid,.contato-grid{grid-template-columns:1fr;gap:40px}
     .team-grid,.serv-grid,.depo-grid{grid-template-columns:1fr 1fr}
     .gallery{grid-template-columns:1fr 1fr}
@@ -356,15 +365,6 @@
     .hero .arch{max-width:420px;margin:0 auto}
   }
   @media(max-width:640px){
-    .navlinks{
-      position:fixed;inset:0 0 auto 0;top:64px;flex-direction:column;gap:0;
-      background:var(--cream);padding:8px 0;box-shadow:var(--shadow);
-      transform:translateY(-130%);transition:transform .35s;align-items:stretch;
-    }
-    .navlinks.open{transform:none}
-    .navlinks a{padding:14px 28px;border-bottom:1px solid rgba(63,79,66,.06)}
-    .navlinks .btn{margin:12px 28px;justify-content:center}
-    .menu-toggle{display:flex}
     .team-grid,.serv-grid,.depo-grid,.foot-grid{grid-template-columns:1fr}
     .gallery{grid-template-columns:1fr}
     .steps{grid-template-columns:1fr}
@@ -443,10 +443,10 @@
     <a href="#topo" class="brand"><svg class="mark" aria-hidden="true"><use href="#elleve-mark"/></svg><b>Elleve</b> <span>Studio Dental</span></a>
     <div class="navlinks" id="navlinks">
       <a href="#equipe">Equipe</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#espaco">Espaço</a>
+      <a href="#sobre">A Elleve</a>
       <a href="#servicos">Tratamentos</a>
       <a href="#depoimentos">Depoimentos</a>
+      <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
       <a href="https://wa.me/5548992044266?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Elleve%20Studio%20Dental." class="btn" target="_blank" rel="noopener">Agendar avaliação</a>
     </div>
@@ -611,7 +611,6 @@
 <section class="espaco section-pad" id="espaco">
   <div class="wrap">
     <div class="section-head center reveal">
-      <p class="eyebrow">Conheça a clínica</p>
       <h2>Nosso espaço</h2>
       <p>Ambientes acolhedores, preparados para receber você e a sua família com todo o conforto.</p>
     </div>
