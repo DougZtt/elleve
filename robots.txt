@@ -1,0 +1,5 @@
+# Elleve Studio Dental — https://ellevestudiodental.com.br/
+User-agent: *
+Allow: /
+
+Sitemap: https://ellevestudiodental.com.br/sitemap.xml
